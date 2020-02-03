@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
-import Button from './Button';
-import Result from './Result';
+import GetQueen from '../containers/GetQueen';
+import { getRandomQueen } from '../services/getQueens';
 
 export default class App extends Component {
 
@@ -8,24 +8,18 @@ export default class App extends Component {
     queen: {}
   }
 
-  getRandomQueen = () => {
-
-    return fetch('http://www.nokeynoshade.party/api/queens/')
-      .then(res => res.json())
-      .then(res => res[Math.floor(Math.random() * res.length)])
-      .then(res => this.setState(() => ({ queen: res })));
+  getQueen = () => {
+    return getRandomQueen().then(res => this.setState(() => ({ queen: res })));
   };
 
   componentDidMount() {
-    this.getRandomQueen();
+    this.getQueen();
   }
-
 
   render() {
     return (
       <>
-        <Button onClick={this.getRandomQueen} />
-        <Result queen={ this.state.queen }/>
+        <GetQueen getQueen={this.getQueen} queen={this.state.queen}/>
       </>
     );
   }
