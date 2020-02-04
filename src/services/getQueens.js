@@ -1,5 +1,4 @@
-export const getRandomQueen = () => {
+export const getQueens = () => {
   return fetch('http://www.nokeynoshade.party/api/queens/all')
-    .then(res => res.json())
-    .then(res => res[Math.floor(Math.random() * res.length)]);
+    .then(res => res.json());
 };

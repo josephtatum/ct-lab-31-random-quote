@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import GetQueen from '../containers/GetQueen';
+// import QueenApp from '../containers/GetQueen';
 import '../styles.css';
-import GetQueenFn from '../containers/GetQueenFn';
+import QueenApp from '../containers/GetQueenFn';
 
 export default function App() {
 
   return (
     <>
-      <GetQueenFn />
+      <QueenApp />
       {/* <GetQueen /> */}
     </>
   );

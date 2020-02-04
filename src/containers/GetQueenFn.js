@@ -2,22 +2,25 @@ import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import Result from '../components/Result';
 import List from '../components/List';
-import { getRandomQueen } from '../services/getQueens';
+import { getQueens } from '../services/getQueens';
 
 
-const GetQueenFn = () => {
+const QueenApp = () => {
 
   const [queen, setQueen] = useState({});
+  const [queensList, setQueenList] = useState([]);
+  
 
   useEffect(() => {
-    return getRandomQueen()
+    return getQueens()
       .then(res => {
-        setQueen(res);
+        setQueenList(res);
       });
   }, []);
 
   const handleClick = () => {
-    return getRandomQueen()
+    return getQueens()
+      .then(res => res[Math.floor(Math.random() * res.length)])
       .then(res => {
         setQueen(res);
       });
@@ -25,14 +28,14 @@ const GetQueenFn = () => {
 
   return (
     <>
-      <List queens={['Thorgy Thor']}/>
+      <List queens={queensList}/>
       <Button onClick={handleClick} />
       <Result queen={queen} />
     </>
   );
 };
 
-export default GetQueenFn;
+export default QueenApp;
 
 // export default class GetQueen extends Component {
 
