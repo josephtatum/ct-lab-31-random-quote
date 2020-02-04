@@ -8,6 +8,13 @@ const GetQueenFn = () => {
 
   const [queen, setQueen] = useState({});
 
+  useEffect(() => {
+    return getRandomQueen()
+      .then(res => {
+        setQueen(res);
+      });
+  }, []);
+
   const handleClick = () => {
     return getRandomQueen()
       .then(res => {
