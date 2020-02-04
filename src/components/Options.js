@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Options = ({ queens }) => {
   return (
     queens.map(queen => {
-      return <option key={queen.name}>
+      return <option key={queen.id} value={queen.id}>
         {queen.name}
       </option>;
     })

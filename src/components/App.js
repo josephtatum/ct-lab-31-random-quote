@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
-// import QueenApp from '../containers/GetQueen';
+import React, { useState, useEffect } from 'react';
 import '../styles.css';
-import QueenApp from '../containers/GetQueenFn';
+import Button from '../components/Button';
+import Result from '../components/Result';
+import List from '../components/List';
 
-export default function App() {
+import { useQueens } from '../hooks/queens';
+
+
+const App = () => {
+  const { queen, queensList, selectedQueen } = useQueens;
 
   return (
     <>
-      <QueenApp />
-      {/* <GetQueen /> */}
+      <List queens={queensList} onSelect={selectedQueen} />
+      <Result queen={queen} />
     </>
   );
-}
+};
+
+export default App;
+
