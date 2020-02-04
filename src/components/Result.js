@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Result = ({ queen }) => {
-  console.log(queen);
   return (
     <div>
       <img src={queen.image_url} alt={queen.name} />

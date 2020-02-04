@@ -2,11 +2,6 @@
 
 exports[`App component renders App 1`] = `
 <Fragment>
-  <Button
-    onClick={[Function]}
-  />
-  <Result
-    queen={Object {}}
-  />
+  <GetQueen />
 </Fragment>
 `;
