@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import Result from '../components/Result';
+import List from '../components/List';
 import { getRandomQueen } from '../services/getQueens';
 
 
@@ -24,6 +25,7 @@ const GetQueenFn = () => {
 
   return (
     <>
+      <List queens={['Thorgy Thor']}/>
       <Button onClick={handleClick} />
       <Result queen={queen} />
     </>
