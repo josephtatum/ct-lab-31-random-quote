@@ -1,12 +1,14 @@
-import React from 'react';
-import Button from './Button';
-import Result from './Result';
+import React, { useState } from 'react';
+import GetQueen from '../containers/GetQueen';
+import '../styles.css';
+import GetQueenFn from '../containers/GetQueenFn';
 
 export default function App() {
+
   return (
     <>
-      <Button />
-      <Result />
+      <GetQueenFn />
+      {/* <GetQueen /> */}
     </>
   );
 }
