@@ -2,9 +2,9 @@ import React from 'react';
 import Options from './Options';
 import PropTypes from 'prop-types';
 
-const List = ({ queens }) => {
+const List = ({ queens, onChange }) => {
   return (
-    <select>
+    <select onChange={({ target }) => onChange(target.value)}>
       <Options queens={queens}/>
     </select>
   );

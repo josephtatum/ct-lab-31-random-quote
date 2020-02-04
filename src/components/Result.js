@@ -5,7 +5,8 @@ const Result = ({ queen }) => {
   return (
     <div>
       <img src={queen.image_url} alt={queen.name} />
-      <p>{queen.name}</p>
+      <h1>{queen.name}</h1>
+      <p>{queen.quote}</p>
     </div>
   );
 };

@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../styles.css';
-import Button from '../components/Button';
 import Result from '../components/Result';
 import List from '../components/List';
 
-import { useQueens } from '../hooks/queens';
-
+import { useQueens } from '../hooks/useQueens';
 
 const App = () => {
-  const { queen, queensList, selectedQueen } = useQueens;
-
+  const { queen, queensList, changeQueen } = useQueens();
+  console.log(queen);
   return (
     <>
-      <List queens={queensList} onSelect={selectedQueen} />
+      <List queens={queensList} onChange={changeQueen} />
       <Result queen={queen} />
     </>
   );

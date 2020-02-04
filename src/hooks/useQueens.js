@@ -6,17 +6,19 @@ export const useQueens = () => {
   const [queen, setQueen] = useState({});
   const [queensList, setQueenList] = useState([]);
 
-
   useEffect(() => {
-    return getQueens()
+    getQueens()
       .then(res => {
         setQueenList(res);
+        setQueen(res[0]);
       });
   }, []);
 
-  const selectedQueen = () => {
-    
+  const changeQueen = id => {
+    const updatedQueen = queensList.find(queen => queen.id === Number(id));
+    setQueen(updatedQueen);
+    console.log(updatedQueen);
   };
 
-  return { queen, queensList, selectedQueen };
+  return { queen, queensList, changeQueen };
 };
