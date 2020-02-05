@@ -2,6 +2,17 @@
 
 exports[`App component renders App 1`] = `
 <Fragment>
-  <GetQueenFn />
+  <List
+    onChange={[Function]}
+    queens={Array []}
+  />
+  <Result
+    onClick={[Function]}
+    queen={Object {}}
+  />
+  <Lipsyncs
+    lipsyncs={Array []}
+    queen={Object {}}
+  />
 </Fragment>
 `;

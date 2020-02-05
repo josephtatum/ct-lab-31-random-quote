@@ -11,6 +11,8 @@ const List = ({ queens, onChange }) => {
 };
 
 List.propTypes = {
+  queens: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default List;

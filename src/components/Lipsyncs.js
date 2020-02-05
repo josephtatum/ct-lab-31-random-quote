@@ -10,7 +10,7 @@ const Lipsyncs = ({ lipsyncs, queen }) => {
           return versus;
         }
       });
-      
+
       return (
         <>
           <p>{i + 1}</p>
@@ -24,7 +24,7 @@ const Lipsyncs = ({ lipsyncs, queen }) => {
 
 Lipsyncs.propTypes = {
   queen: PropTypes.any.isRequired,
-  onClick: PropTypes.func.isRequired
+  lipsyncs: PropTypes.array.isRequired
 };
 
 export default Lipsyncs;
