@@ -1,11 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Lipsyncs = ({ lipsyncs }) => {
-  console.log(lipsyncs);
+const Lipsyncs = ({ lipsyncs, queen }) => {
   return (
-    <div>
-    </div>
+    lipsyncs.map((lipsync, i) => {
+
+      const competition = lipsync.queens.find(versus => {
+        if(versus.id !== queen.id) {
+          return versus;
+        }
+      });
+      
+      return (
+        <>
+          <p>{i + 1}</p>
+          <p key={lipsync.id}>{lipsync.name} - {lipsync.artist}</p>
+          <p>versus: {competition.name}</p>
+        </>
+      );
+    })
   );
 };
 

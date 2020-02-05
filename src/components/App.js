@@ -12,7 +12,7 @@ const App = () => {
     <>
       <List queens={queensList} onChange={changeQueen} />
       <Result queen={queen} onClick={findQueensLipsyncs} />
-      <Lipsyncs lipsyncs={lipsyncList} />
+      <Lipsyncs lipsyncs={lipsyncList} queen={queen}/>
     </>
   );
 };
