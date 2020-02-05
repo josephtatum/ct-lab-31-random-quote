@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles.css';
 import Result from '../components/Result';
 import List from '../components/List';
+import Lipsyncs from '../components/Lipsyncs';
 
 import { useQueens } from '../hooks/useQueens';
 
 const App = () => {
-  const { queen, queensList, changeQueen } = useQueens();
-  console.log(queen);
+  const { queen, queensList, changeQueen, findQueensLipsyncs, lipsyncList } = useQueens();
   return (
     <>
       <List queens={queensList} onChange={changeQueen} />
-      <Result queen={queen} />
+      <Result queen={queen} onClick={findQueensLipsyncs} />
+      <Lipsyncs lipsyncs={lipsyncList} />
     </>
   );
 };

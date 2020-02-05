@@ -12,7 +12,7 @@ const Options = ({ queens }) => {
 };
 
 Options.propTypes = {
-  onClick: PropTypes.func.isRequired
+  queens: PropTypes.array.isRequired
 };
 
 export default Options;
